@@ -6,23 +6,39 @@ def selection_sort(arr):
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
-        # Your code here
-
+        for j in range(cur_index, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
-        # Your code here
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
+
+        print(arr)
 
     return arr
+
+
+selection_sort(arr)
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    count = len(arr)
 
+    while count > 0:
+        for i in range(len(arr) - 1):
+            val = arr[i]
+            nextVal = arr[i + 1]
+
+            if val > nextVal:
+                arr[i], arr[i + 1] = nextVal, val
+
+        count -= 1
 
     return arr
 
-'''
+
+"""
 STRETCH: implement the Counting Sort function below
 
 Counting sort is a sorting algorithm that works on a set of data where
@@ -38,9 +54,10 @@ showed up, we can construct a sorted set of the input data from the
 buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
-'''
+"""
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
-
 
     return arr
